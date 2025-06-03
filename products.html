@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Kain Perca</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">Kampung Perca</a>
+        </div>
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contac.html">Contact</a></li>
+          </ul>
+          <div class="nav-icons">
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-page">
+      <div class="container">
+        <div class="page-header">
+          <h1>Produk Kami</h1>
+          <p>Temukan disini</p>
+        </div>
+
+        <div class="products-container">
+          <!-- Sidebar Filters -->
+          <aside class="filters">
+            <div class="filter-section">
+              <h3>Kategori</h3>
+              <ul>
+                <li><a href="products.html">Semua Produk</a></li>
+                <li><a href="products.html?category=dresses">Dress</a></li>
+                <li><a href="products.html?category=bags">Tas</a></li>
+                <li>
+                  <a href="products.html?category=accessories">Aksesoris</a>
+                </li>
+                <li><a href="products.html?category=home">Dekorasi</a></li>
+              </ul>
+            </div>
+            <div class="filter-section">
+              <h3>Harg</h3>
+              <div class="price-range">
+                <input
+                  type="range"
+                  min="0"
+                  max="500"
+                  value="500"
+                  class="slider"
+                  id="priceRange"
+                />
+                <p>Price: $0 - $<span id="priceValue">500</span></p>
+              </div>
+            </div>
+            <div class="filter-section">
+              <h3>Colors</h3>
+              <div class="color-options">
+                <span
+                  class="color-option"
+                  style="background-color: #e74c3c"
+                  data-color="red"
+                ></span>
+                <span
+                  class="color-option"
+                  style="background-color: #3498db"
+                  data-color="blue"
+                ></span>
+                <span
+                  class="color-option"
+                  style="background-color: #2ecc71"
+                  data-color="green"
+                ></span>
+                <span
+                  class="color-option"
+                  style="background-color: #f1c40f"
+                  data-color="yellow"
+                ></span>
+                <span
+                  class="color-option"
+                  style="background-color: #9b59b6"
+                  data-color="purple"
+                ></span>
+                <span
+                  class="color-option"
+                  style="background-color: #e67e22"
+                  data-color="orange"
+                ></span>
+              </div>
+            </div>
+            <button class="btn" id="applyFilters">Apply Filters</button>
+            <button class="btn-outline" id="resetFilters">Reset</button>
+          </aside>
+
+         <!-- Di bagian products-grid, ganti seluruh bagian grid dengan ini -->
+<div class="grid">
+  <!-- Product items akan diisi oleh JavaScript -->
+</div>
+
+            <div class="grid">
+              <!-- Product items will be loaded here via JavaScript -->
+            </div>
+
+            <div class="pagination">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-product">
+          <div class="modal-product-images">
+            <div class="main-image">
+              <img src="" alt="" id="modalMainImage" />
+            </div>
+            <div class="thumbnail-images">
+              <img src="img/DasterNew.webp" alt="Thumbnail 1" />
+              <img src="img/product1-thumb2.jpg" alt="Thumbnail 2" />
+              <img src="img/product1-thumb3.jpg" alt="Thumbnail 3" />
+              <img src="img/product1-thumb4.jpg" alt="Thumbnail 4" />
+              <img src="img/product1-thumb5.jpg" alt="Thumbnail 5" />
+              <img src="img/product1-thumb6.jpg" alt="Thumbnail 6" />
+              <img src="img/product1-thumb7.jpg" alt="Thumbnail 7" />
+              <img src="img/product1-thumb8.jpg" alt="Thumbnail 8" />
+            </div>
+          </div>
+          <div class="modal-product-details">
+            <h2 id="modalProductName"></h2>
+            <div class="price" id="modalProductPrice"></div>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(24 reviews)</span>
+            </div>
+            <p id="modalProductDescription"></p>
+
+            <div class="size-options">
+              <h3>Size</h3>
+              <div class="sizes">
+                <span class="size">S</span>
+                <span class="size active">M</span>
+                <span class="size">L</span>
+                <span class="size">XL</span>
+              </div>
+            </div>
+
+            <div class="quantity">
+              <h3>Quantity</h3>
+              <div class="quantity-selector">
+                <button class="quantity-btn minus">-</button>
+                <input type="number" value="1" min="1" />
+                <button class="quantity-btn plus">+</button>
+              </div>
+            </div>
+
+            <a href="cart.html"><button class="btn add-to-cart">Add to Cart</button></a>
+
+            <div class="product-meta">
+              <p>
+                <span>Category:</span> <span id="modalProductCategory"></span>
+              </p>
+              <p><span>SKU:</span> <span id="modalProductSKU"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <h3>Join Our Community</h3>
+        <p>
+          Subscribe to get 10% off your first order and updates on new
+          collections
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Kain Perca</h4>
+            <p>
+              Handcrafted patchwork fashion made with reclaimed fabrics.
+              Sustainable, unique, and full of character.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contac.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect With Us</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/kampungperca_kotabogor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Kain Perca. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+  </body>
+</html>
